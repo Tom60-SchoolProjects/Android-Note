@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Note</string>
+    <string name="menu_add_note">Ajouter une note</string>
+    <string name="menu_see_notes">Voir les notes</string>
+    <string name="add_note_title">Titre :</string>
+    <string name="add_note_content">Contenu :</string>
+</resources>
