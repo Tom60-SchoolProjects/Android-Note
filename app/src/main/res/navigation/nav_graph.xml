@@ -8,8 +8,8 @@
 
         <action android:id="@+id/action_FirstFragment_to_SecondFragment" app:destination="@id/SecondFragment" />
     </fragment>
-    <fragment android:id="@+id/SecondFragment" android:name="not.naught.knot.notre.newt.knock.note.SecondFragment"
-        android:label="@string/second_fragment_label" tools:layout="@layout/fragment_second">
+    <fragment android:id="@+id/SecondFragment" android:name="not.naught.knot.notre.newt.knock.note.AddNoteFragment"
+        android:label="@string/second_fragment_label" tools:layout="@layout/fragment_add_note">
 
         <action android:id="@+id/action_SecondFragment_to_FirstFragment" app:destination="@id/FirstFragment" />
     </fragment>
