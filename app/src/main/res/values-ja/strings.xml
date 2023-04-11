@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">『ノート』</string>
+    <string name="menu_see_notes">ノートを見る</string>
+    <string name="add_note_title">タイトル：</string>
+    <string name="add_note_content">内容：</string>
+    <string name="menu_add_note">ノートを付く</string>
+</resources>
