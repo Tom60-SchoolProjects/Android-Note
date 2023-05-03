@@ -41,4 +41,6 @@
     <string name="menu_see_notes">See Notes</string>
     <string name="add_note_title">Title:</string>
     <string name="add_note_content">Content:</string>
+    <string name="add_note_validate">Add</string>
+    <string name="cancel">Cancel</string>
 </resources>
