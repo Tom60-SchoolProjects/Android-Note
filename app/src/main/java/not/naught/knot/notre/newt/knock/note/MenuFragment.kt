@@ -1,5 +1,8 @@
 package not.naught.knot.notre.newt.knock.note
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,6 +41,17 @@ class MenuFragment : Fragment() {
 
         binding.buttonSeeNotes.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_viewNotesFragment)
+        }
+
+        binding.buttonTodo.setOnClickListener {
+            val youtubeID = "dQw4w9WgXcQ"
+            val intentApp = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + youtubeID))
+            val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + youtubeID))
+            try {
+                this.startActivity(intentApp)
+            } catch (ex: ActivityNotFoundException) {
+                this.startActivity(intentBrowser)
+            }
         }
     }
 
