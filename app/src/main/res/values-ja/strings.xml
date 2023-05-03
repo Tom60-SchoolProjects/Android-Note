@@ -7,4 +7,10 @@
     <string name="menu_add_note">ノートを付ける</string>
     <string name="add_note_validate">付けれ</string>
     <string name="cancel">止める</string>
+    <string name="view_notes_notes">ノート：</string>
+    <string name="view_notes_title">タイトル</string>
+    <string name="view_notes_created_at">作成日時</string>
+    <string name="fragment_view_notes">ノートを見る</string>
+    <string name="fragment_add_note">ノートを付ける</string>
+    <string name="fragment_menu">メニュー</string>
 </resources>
