@@ -14,4 +14,9 @@
     <string name="fragment_add_note">ノートを付ける</string>
     <string name="fragment_menu">メニュー</string>
     <string name="save">セーブ</string>
+    <string name="add_note_title_error">タイトルは空であってはいけない</string>
+    <string name="add_note_discard_title">このノートを捨てる？</string>
+    <string name="add_note_discard_content">本当にこのノートを捨てる？</string>
+    <string name="yes">はい</string>
+    <string name="no">いええ</string>
 </resources>
