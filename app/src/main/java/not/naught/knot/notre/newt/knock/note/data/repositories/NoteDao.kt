@@ -1,10 +1,10 @@
-package not.naught.knot.notre.newt.knock.note.repositories
+package not.naught.knot.notre.newt.knock.note.data.repositories
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import not.naught.knot.notre.newt.knock.note.entities.Note
+import not.naught.knot.notre.newt.knock.note.data.entities.Note
 
 @Dao
 interface NoteDao {

@@ -1,4 +1,4 @@
-package not.naught.knot.notre.newt.knock.note
+package not.naught.knot.notre.newt.knock.note.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import not.naught.knot.notre.newt.knock.note.R
 import not.naught.knot.notre.newt.knock.note.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

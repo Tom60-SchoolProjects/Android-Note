@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
 
-    tools:context=".AddNoteFragment" >
+    tools:context=".ui.fragments.AddNoteFragment" >
 
     <TextView
         android:id="@+id/textViewTitle"

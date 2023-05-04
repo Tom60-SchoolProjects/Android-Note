@@ -1,4 +1,4 @@
-package not.naught.knot.notre.newt.knock.note
+package not.naught.knot.notre.newt.knock.note.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
+import not.naught.knot.notre.newt.knock.note.data.AppDatabase
 import not.naught.knot.notre.newt.knock.note.databinding.FragmentViewNotesBinding
 
 

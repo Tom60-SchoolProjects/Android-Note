@@ -1,4 +1,4 @@
-package not.naught.knot.notre.newt.knock.note.entities
+package not.naught.knot.notre.newt.knock.note.data.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

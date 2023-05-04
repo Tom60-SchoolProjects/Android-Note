@@ -1,4 +1,4 @@
-package not.naught.knot.notre.newt.knock.note
+package not.naught.knot.notre.newt.knock.note.ui.fragments
 
 import android.os.Bundle
 import android.view.*
@@ -10,8 +10,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import not.naught.knot.notre.newt.knock.note.data.AppDatabase
+import not.naught.knot.notre.newt.knock.note.R
 import not.naught.knot.notre.newt.knock.note.databinding.FragmentAddNoteBinding
-import not.naught.knot.notre.newt.knock.note.entities.Note
+import not.naught.knot.notre.newt.knock.note.data.entities.Note
 import java.util.*
 
 
@@ -34,6 +36,7 @@ class AddNoteFragment : Fragment() {
 
         val menuHost: MenuHost = requireActivity()
 
+        // Handle menu items
         menuHost.addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 // Add menu items here
@@ -44,14 +47,16 @@ class AddNoteFragment : Fragment() {
                 // Handle the menu selection
                 return when (menuItem.itemId) {
                     R.id.menu_save_note -> {
-
+                        // Check if title is empty
                         if (binding.editTextTitle.text.toString().isEmpty()) {
                             binding.editTextTitle.error = resources.getText(R.string.add_note_title_error)
                             return false
                         }
 
+                        // Disable menu item to avoid user to double save
                         menuItem.isEnabled = false
 
+                        // Connect to database
                         val db = Room.databaseBuilder(
                             context!!,
                             AppDatabase::class.java,
@@ -59,18 +64,16 @@ class AddNoteFragment : Fragment() {
                             .allowMainThreadQueries()
                             .build()
 
-                        val noteDao = db.noteDao()
-
+                        // Save note to database
                         val note = Note(
                             title = binding.editTextTitle.text.toString(),
                             content = binding.editTextContent.text.toString(),
                             createdAt = Date(System.currentTimeMillis()),
                         )
+                        db.noteDao().insertAll(note)
 
-                        noteDao.insertAll(note)
-
+                        // Go back to previous fragment
                         findNavController().popBackStack()
-
                         true
                     }
                     android.R.id.home -> {
@@ -82,6 +85,7 @@ class AddNoteFragment : Fragment() {
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
+        // Handle back button
         requireActivity()
             .onBackPressedDispatcher
             .addCallback(this) {
@@ -96,13 +100,19 @@ class AddNoteFragment : Fragment() {
         _binding = null
     }
 
+    /**
+     * Show alert dialog if there is any unsaved change
+     */
     fun discardNoteAlertDialogIfUnsavedChange() {
+
+        // Check if there is any unsaved change
         if (binding.editTextTitle.text.toString().isEmpty() &&
             binding.editTextContent.text.toString().isEmpty()) {
             findNavController().popBackStack()
             return
         }
 
+        // Show alert dialog
         MaterialAlertDialogBuilder(requireContext())
             .setIcon(android.R.drawable.ic_menu_save)
             .setTitle(resources.getText(R.string.add_note_discard_title))

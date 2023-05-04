@@ -1,11 +1,12 @@
-package not.naught.knot.notre.newt.knock.note
+package not.naught.knot.notre.newt.knock.note.ui.fragments
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import not.naught.knot.notre.newt.knock.note.entities.Note
+import not.naught.knot.notre.newt.knock.note.R
+import not.naught.knot.notre.newt.knock.note.data.entities.Note
 
 class NoteAdapter(private val data: List<Note>) : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

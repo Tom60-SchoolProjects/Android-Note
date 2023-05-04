@@ -3,15 +3,15 @@
             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/nav_graph" app:startDestination="@id/menuFragment">
 
-    <fragment android:id="@+id/menuFragment" android:name="not.naught.knot.notre.newt.knock.note.MenuFragment"
+    <fragment android:id="@+id/menuFragment" android:name="not.naught.knot.notre.newt.knock.note.ui.fragments.MenuFragment"
               android:label="" tools:layout="@layout/fragment_menu" >
 
         <action android:id="@+id/action_menuFragment_to_addNoteFragment" app:destination="@id/addNoteFragment"/>
         <action android:id="@+id/action_menuFragment_to_viewNotesFragment" app:destination="@id/viewNotesFragment"/>
     </fragment>
 
-    <fragment android:id="@+id/addNoteFragment" android:name="not.naught.knot.notre.newt.knock.note.AddNoteFragment"
+    <fragment android:id="@+id/addNoteFragment" android:name="not.naught.knot.notre.newt.knock.note.ui.fragments.AddNoteFragment"
               android:label="@string/fragment_add_note" tools:layout="@layout/fragment_add_note"/>
-    <fragment android:id="@+id/viewNotesFragment" android:name="not.naught.knot.notre.newt.knock.note.ViewNotesFragment"
+    <fragment android:id="@+id/viewNotesFragment" android:name="not.naught.knot.notre.newt.knock.note.ui.fragments.ViewNotesFragment"
               android:label="@string/fragment_view_notes" tools:layout="@layout/fragment_view_notes"/>
 </navigation>
