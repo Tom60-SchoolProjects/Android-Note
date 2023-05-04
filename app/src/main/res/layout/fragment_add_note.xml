@@ -37,7 +37,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:inputType="text"
+        tools:text="@tools:sample/lorem" />
 
     <TextView
         android:id="@+id/textViewContent"
@@ -68,6 +70,7 @@
 
         android:inputType="textMultiLine"
         android:ems="10"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        tools:text="@tools:sample/lorem/random" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -104,6 +104,7 @@ class AddNoteFragment : Fragment() {
         }
 
         MaterialAlertDialogBuilder(requireContext())
+            .setIcon(android.R.drawable.ic_menu_save)
             .setTitle(resources.getText(R.string.add_note_discard_title))
             .setMessage(resources.getText(R.string.add_note_discard_content))
             .setPositiveButton(resources.getText(R.string.yes)) { _, _ ->
