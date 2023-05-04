@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.Room
 import not.naught.knot.notre.newt.knock.note.databinding.FragmentViewNotesBinding
 
 
@@ -22,6 +24,16 @@ class ViewNotesFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentViewNotesBinding.inflate(inflater, container, false)
+
+        // Get notes from DB
+        val db = Room.databaseBuilder(requireContext(), AppDatabase::class.java, "app").allowMainThreadQueries().build()
+        val noteDao = db.noteDao()
+        val notes = noteDao.getAll()
+
+        // Bind them to the recycler view
+        binding.innerView.adapter = NoteAdapter(notes)
+        binding.innerView.layoutManager = LinearLayoutManager(context)
+
         return binding.root
     }
 
