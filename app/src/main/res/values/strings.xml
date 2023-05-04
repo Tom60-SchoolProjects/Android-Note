@@ -16,4 +16,8 @@
     <string name="fragment_view_notes">View Notes</string>
     <string name="save">Save</string>
     <string name="add_note_title_error">Title cannot be empty</string>
+    <string name="add_note_discard_title">Discard Note?</string>
+    <string name="add_note_discard_content">Are you sure you want to discard this note?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

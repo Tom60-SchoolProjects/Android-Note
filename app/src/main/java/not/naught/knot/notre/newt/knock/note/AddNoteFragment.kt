@@ -3,13 +3,13 @@ package not.naught.knot.notre.newt.knock.note
 import android.os.Bundle
 import android.view.*
 import androidx.activity.addCallback
-import androidx.appcompat.app.AlertDialog
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import not.naught.knot.notre.newt.knock.note.databinding.FragmentAddNoteBinding
 import not.naught.knot.notre.newt.knock.note.entities.Note
 import java.util.*
@@ -73,6 +73,10 @@ class AddNoteFragment : Fragment() {
 
                         true
                     }
+                    android.R.id.home -> {
+                        discardNoteAlertDialogIfUnsavedChange()
+                        true
+                    }
                     else -> false
                 }
             }
@@ -81,14 +85,7 @@ class AddNoteFragment : Fragment() {
         requireActivity()
             .onBackPressedDispatcher
             .addCallback(this) {
-                AlertDialog.Builder(requireContext())
-                    .setTitle("Discard Note?")
-                    .setMessage("Are you sure you want to discard this note?")
-                    .setPositiveButton("Yes") { _, _ ->
-                        findNavController().popBackStack()
-                    }
-                    .setNegativeButton("No", null)
-                    .show()
+                discardNoteAlertDialogIfUnsavedChange()
             }
 
         return binding.root
@@ -97,5 +94,22 @@ class AddNoteFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun discardNoteAlertDialogIfUnsavedChange() {
+        if (binding.editTextTitle.text.toString().isEmpty() &&
+            binding.editTextContent.text.toString().isEmpty()) {
+            findNavController().popBackStack()
+            return
+        }
+
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(resources.getText(R.string.add_note_discard_title))
+            .setMessage(resources.getText(R.string.add_note_discard_content))
+            .setPositiveButton(resources.getText(R.string.yes)) { _, _ ->
+                findNavController().popBackStack()
+            }
+            .setNegativeButton(resources.getText(R.string.no), null)
+            .show()
     }
 }
