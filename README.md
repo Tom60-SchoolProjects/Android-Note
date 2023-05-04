@@ -1,7 +1,9 @@
 # Note
 
-<img alt="Logo" src="docs/images/logos/logo2%20bg%20black.png" />
-<b>An app to take notes and save cat pictures.</b>
+<div>
+  <img alt="Logo" src="docs/images/logos/logo2%20bg%20black.png" width="100" />
+  <h3>An app to take notes and save cat pictures.</h3>
+</div>
 
 ## Installation
 
@@ -15,6 +17,8 @@
 
 # Screenshots
 
-![Screenshots](docs/images/screenshots/Screenshot%20-%20en%20-%20menu.png)
-![Screenshots](docs/images/screenshots/Screenshot%20-%20en%20-%20add.png)
-![Screenshots](docs/images/screenshots/Screenshot%20-%20en%20-%20list.png)
+<div style="display:inline-block;">
+  <img alt="Screenshot" src="docs/images/screenshots/Screenshot%20-%20en%20-%20menu.png" height="400" />
+  <img alt="Screenshot" src="docs/images/screenshots/Screenshot%20-%20en%20-%20add.png" height="400" />
+  <img alt="Screenshot" src="docs/images/screenshots/Screenshot%20-%20en%20-%20list.png" height="400" />
+</div>
