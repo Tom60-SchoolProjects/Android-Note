@@ -3,60 +3,71 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+
     tools:context=".AddNoteFragment" >
 
     <TextView
-            android:text="@string/add_note_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textViewTitle"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            android:textSize="24sp" android:typeface="monospace"/>
+        android:id="@+id/textViewTitle"
+        android:text="@string/add_note_title"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+
+        android:textSize="24sp"
+        android:typeface="monospace"
+        android:labelFor="@+id/editTextTitle" />
+
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editTextTitle"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent" android:textSize="16sp" android:importantForAutofill="no"
-            tools:ignore="LabelFor"/>
+        android:id="@+id/editTextTitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:importantForAutofill="no" />
+
     <TextView
-            android:text="@string/add_note_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textViewContent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTitle"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="24dp" android:textSize="24sp"
-            android:typeface="monospace"/>
+        android:id="@+id/textViewContent"
+        android:text="@string/add_note_content"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+
+        android:textSize="24sp"
+        android:typeface="monospace" />
+
     <EditText
         android:id="@+id/editTextContent"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="top"
 
         app:layout_constraintTop_toBottomOf="@id/textViewContent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
         android:inputType="textMultiLine"
         android:ems="10"
-        android:textSize="12sp" android:importantForAutofill="no" tools:ignore="LabelFor"/>
-
-    <Button
-            android:id="@+id/buttonSave"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-
-            android:text="Save"/>
+        android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,4 +13,5 @@
     <string name="fragment_view_notes">ノートを見る</string>
     <string name="fragment_add_note">ノートを付ける</string>
     <string name="fragment_menu">メニュー</string>
+    <string name="save">セーブ</string>
 </resources>

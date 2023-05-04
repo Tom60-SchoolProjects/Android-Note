@@ -13,4 +13,5 @@
     <string name="fragment_view_notes">Voir les notes</string>
     <string name="fragment_add_note">Ajouter une note</string>
     <string name="fragment_menu">Menu</string>
+    <string name="save">Sauvegarder</string>
 </resources>
