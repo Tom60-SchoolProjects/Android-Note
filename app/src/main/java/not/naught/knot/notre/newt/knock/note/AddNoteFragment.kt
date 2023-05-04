@@ -45,6 +45,11 @@ class AddNoteFragment : Fragment() {
                 return when (menuItem.itemId) {
                     R.id.menu_save_note -> {
 
+                        if (binding.editTextTitle.text.toString().isEmpty()) {
+                            binding.editTextTitle.error = resources.getText(R.string.add_note_title_error)
+                            return false
+                        }
+
                         menuItem.isEnabled = false
 
                         val db = Room.databaseBuilder(
