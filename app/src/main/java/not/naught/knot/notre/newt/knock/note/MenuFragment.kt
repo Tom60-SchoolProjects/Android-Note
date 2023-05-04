@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import not.naught.knot.notre.newt.knock.note.databinding.FragmentMenuBinding
@@ -47,8 +46,8 @@ class MenuFragment : Fragment() {
 
         binding.buttonTodo.setOnClickListener {
             val youtubeID = "dQw4w9WgXcQ"
-            val intentApp = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + youtubeID))
-            val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + youtubeID))
+            val intentApp = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:$youtubeID"))
+            val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=$youtubeID"))
             try {
                 this.startActivity(intentApp)
             } catch (ex: ActivityNotFoundException) {
