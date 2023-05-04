@@ -7,6 +7,8 @@
 
 ## Installation
 
+You need Android 13 or later, to run the app.
+
 - [Download the lasted version.](https://github.com/Tom60chat/Note/releases/latest)
 - and install the apk.
 
