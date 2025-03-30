@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'not.naught.knot.notre.newt.knock.note'
-    compileSdk 33
+    compileSdk 36
 
     defaultConfig {
         applicationId "not.naught.knot.notre.newt.knock.note"
         minSdk 33
-        targetSdk 33
+        targetSdk 36
         versionCode 1
         versionName "1.0"
 
